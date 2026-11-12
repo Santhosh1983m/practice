@@ -1,0 +1,2 @@
+cd "C:\Program Files\RabbitMQ Server\rabbitmq_server-<version>\sbin"
+rabbitmq-plugins.bat enable rabbitmq_management
