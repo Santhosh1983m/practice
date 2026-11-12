@@ -28,3 +28,6 @@ rabbitmqctl.bat cluster_status
 
    cd "C:\Program Files\RabbitMQ Server\rabbitmq_server-4.4.0\sbin"
    rabbitmqctl.bat status
+
+
+echo cluster_partition_handling = autoheal> "C:\Users\santhosh.kumar\AppData\Roaming\RabbitMQ\rabbitmq.conf"
