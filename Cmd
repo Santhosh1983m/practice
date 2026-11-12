@@ -1,0 +1,11 @@
+netsh advfirewall firewall add rule name="RabbitMQ" dir=in action=allow protocol=TCP localport=4369,5672,15672,25672,35672-35682
+
+
+  net stop RabbitMQ && net start RabbitMQ
+
+
+rabbitmqctl.bat stop_app
+rabbitmqctl.bat reset
+rabbitmqctl.bat join_cluster rabbit@<HOSTNAME-121>
+rabbitmqctl.bat start_app
+rabbitmqctl.bat cluster_status
