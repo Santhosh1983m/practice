@@ -14,3 +14,17 @@ rabbitmqctl.bat cluster_status
 
 
    http://192.168.150.99:15672
+
+
+   cluster_partition_handling = autoheal
+
+     C:\Users\santhosh.kumar\AppData\Roaming\RabbitMQ
+
+
+   net stop RabbitMQ
+   net start RabbitMQ
+
+
+
+   cd "C:\Program Files\RabbitMQ Server\rabbitmq_server-4.4.0\sbin"
+   rabbitmqctl.bat status
