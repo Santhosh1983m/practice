@@ -11,3 +11,6 @@ rabbitmqctl.bat reset
 rabbitmqctl.bat join_cluster rabbit@Auto-Master
 rabbitmqctl.bat start_app
 rabbitmqctl.bat cluster_status
+
+
+   http://192.168.150.99:15672
