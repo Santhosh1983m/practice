@@ -1,0 +1,2 @@
+attrib -r -h "%USERPROFILE%\.erlang.cookie"
+copy /Y "C:\Windows\System32\config\systemprofile\.erlang.cookie" "%USERPROFILE%\.erlang.cookie"
