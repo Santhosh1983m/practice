@@ -1,0 +1,25 @@
+   type "C:\Windows\System32\config\systemprofile\.erlang.cookie"
+
+
+   net stop RabbitMQ
+
+
+   attrib -r -h "C:\Windows\System32\config\systemprofile\.erlang.cookie"
+   attrib -r -h "%USERPROFILE%\.erlang.cookie"
+
+
+   <nul set /p ="PASTE_COOKIE_HERE" > "C:\Windows\System32\config\systemprofile\.erlang.cookie"
+
+
+   copy /Y "C:\Windows\System32\config\systemprofile\.erlang.cookie" "%USERPROFILE%\.erlang.cookie"
+
+
+   net start RabbitMQ
+
+
+   type "C:\Windows\System32\config\systemprofile\.erlang.cookie"
+
+
+
+   cd "C:\Program Files\RabbitMQ Server\rabbitmq_server-4.4.0\sbin"
+   rabbitmqctl.bat status
