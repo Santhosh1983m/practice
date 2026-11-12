@@ -1,0 +1,127 @@
+C:\Program Files\RabbitMQ Server\rabbitmq_server-4.4.0\sbin>net stop RabbitMQ
+The RabbitMQ service is stopping.
+The RabbitMQ service was stopped successfully.
+
+
+C:\Program Files\RabbitMQ Server\rabbitmq_server-4.4.0\sbin>attrib -r -h "C:\Windows\System32\config\systemprofile\.erlang.cookie"
+
+C:\Program Files\RabbitMQ Server\rabbitmq_server-4.4.0\sbin>attrib -r -h "%USERPROFILE%\.erlang.cookie"
+
+C:\Program Files\RabbitMQ Server\rabbitmq_server-4.4.0\sbin><nul set /p ="RQLCHGHNHCEKHAAKZOMY" > "C:\Windows\System32\config\systemprofile\.erlang.cookie"
+
+C:\Program Files\RabbitMQ Server\rabbitmq_server-4.4.0\sbin>copy /Y "C:\Windows\System32\config\systemprofile\.erlang.cookie" "%USERPROFILE%\.erlang.cookie"
+        1 file(s) copied.
+
+C:\Program Files\RabbitMQ Server\rabbitmq_server-4.4.0\sbin>net start RabbitMQ
+The RabbitMQ service is starting.
+The RabbitMQ service was started successfully.
+
+
+C:\Program Files\RabbitMQ Server\rabbitmq_server-4.4.0\sbin>type "C:\Windows\System32\config\systemprofile\.erlang.cookie"
+RQLCHGHNHCEKHAAKZOMY
+C:\Program Files\RabbitMQ Server\rabbitmq_server-4.4.0\sbin>cd "C:\Program Files\RabbitMQ Server\rabbitmq_server-4.4.0\sbin"
+
+C:\Program Files\RabbitMQ Server\rabbitmq_server-4.4.0\sbin>rabbitmqctl.bat status
+Status of node rabbit@Auto-Slave ...
+Runtime
+
+OS PID: 13696
+OS: Windows
+Uptime (seconds): 100
+Is under maintenance?: false
+RabbitMQ version: 4.4.0
+RabbitMQ release series support status: see https://www.rabbitmq.com/release-information
+Node name: rabbit@Auto-Slave
+Erlang configuration: Erlang/OTP 29 [erts-17.1.1] [source] [64-bit] [smp:8:8] [ds:8:8:10] [async-threads:1] [jit:ns]
+Crypto library: OpenSSL 3.5.5 27 Jan 2026
+Erlang processes: 434 used, 1048576 limit
+Scheduler run queue: 1
+Cluster heartbeat timeout (net_ticktime): 60
+
+Plugins
+
+Enabled plugin file: c:/Users/santhosh.kumar/AppData/Roaming/RabbitMQ/enabled_plugins
+Enabled plugins:
+
+ * rabbitmq_management
+ * rabbitmq_management_agent
+ * rabbitmq_web_dispatch
+ * amqp_client
+ * cowboy
+ * oauth2_client
+
+Data directory
+
+Node data directory: c:/Users/santhosh.kumar/AppData/Roaming/RabbitMQ/db/rabbit@Auto-Slave-mnesia
+Raft data directory: c:/Users/santhosh.kumar/AppData/Roaming/RabbitMQ/db/rabbit@Auto-Slave-mnesia/quorum/rabbit@Auto-Slave
+
+Config files
+
+ * c:/Users/santhosh.kumar/AppData/Roaming/RabbitMQ/advanced.config
+
+Log file(s)
+
+ * <stdout>
+ * c:/Users/santhosh.kumar/AppData/Roaming/RabbitMQ/log/rabbit@Auto-Slave.log
+
+Alarms
+
+(none)
+
+Tags
+
+(none)
+
+Memory
+
+Total memory used: 0.0791 gb
+Calculation strategy: rss
+Memory high watermark setting: 0.6 of available memory, computed to: 20.5733 gb
+
+code: 0.0249 gb (31.45 %)
+other_proc: 0.0226 gb (28.57 %)
+other_system: 0.0221 gb (27.98 %)
+other_ets: 0.0032 gb (4.1 %)
+metrics: 0.0012 gb (1.55 %)
+atom: 0.0011 gb (1.38 %)
+reserved_unallocated: 0.001 gb (1.33 %)
+plugins: 0.0009 gb (1.18 %)
+allocated_unused: 0.0006 gb (0.82 %)
+binary: 0.0004 gb (0.54 %)
+mgmt_db: 0.0004 gb (0.46 %)
+msg_index: 0.0002 gb (0.29 %)
+metadata_store: 0.0002 gb (0.25 %)
+metadata_store_ets: 0.0 gb (0.06 %)
+connection_other: 0.0 gb (0.02 %)
+quorum_ets: 0.0 gb (0.01 %)
+quorum_queue_procs: 0.0 gb (0.0 %)
+quorum_queue_dlx_procs: 0.0 gb (0.0 %)
+stream_queue_procs: 0.0 gb (0.0 %)
+stream_queue_replica_reader_procs: 0.0 gb (0.0 %)
+mnesia: 0.0 gb (0.0 %)
+connection_readers: 0.0 gb (0.0 %)
+connection_writers: 0.0 gb (0.0 %)
+connection_channels: 0.0 gb (0.0 %)
+queue_procs: 0.0 gb (0.0 %)
+stream_queue_coordinator_procs: 0.0 gb (0.0 %)
+
+Free Disk Space
+
+Low free disk space watermark: 0.05 gb
+Free disk space: 97.4465 gb
+
+Totals
+
+Connection count: 0
+Queue count: 0
+Virtual host count: 1
+
+Listeners
+
+Interface: [::], port: 15672, protocol: http, purpose: HTTP API
+Interface: 0.0.0.0, port: 15672, protocol: http, purpose: HTTP API
+Interface: [::], port: 25672, protocol: clustering, purpose: inter-node and CLI tool communication
+Interface: [::], port: 5672, protocol: amqp, purpose: AMQP 0-9-1 and AMQP 1.0
+Interface: 0.0.0.0, port: 5672, protocol: amqp, purpose: AMQP 0-9-1 and AMQP 1.0
+
+C:\Program Files\RabbitMQ Server\rabbitmq_server-4.4.0\sbin>
