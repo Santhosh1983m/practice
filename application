@@ -1,0 +1,149 @@
+server.port=8082
+
+# RabbitMQ
+# FORCE LOCAL CONNECTION
+#spring.rabbitmq.username=rpa
+#spring.rabbitmq.password=rpa123
+#spring.rabbitmq.host=127.0.0.1
+#spring.rabbitmq.port=5672
+
+# =========================
+# LOCAL RabbitMQ  (to use: uncomment this block, comment the SERVER block at the bottom)
+# =========================
+#spring.rabbitmq.host=localhost
+#spring.rabbitmq.port=5672
+#spring.rabbitmq.username=guest
+#spring.rabbitmq.password=guest
+#
+#broker.host=localhost
+#broker.port=5672
+#broker.username=guest
+#broker.password=guest
+#
+#rpa.queue.main=rpa_submission_main_q
+#rpa.queue.response=rpa_submission_response_q
+#rpa.queue.query=rpa_query_main_q
+#
+## Queues
+#rpa.queue.main=rpa_submission_main_q
+#rpa.queue.response=rpa_submission_response_q
+#rpa.queue.query=rpa_query_main_q
+#
+#### PostgreSQL
+#spring.datasource.url=jdbc:postgresql://localhost:5432/postgres
+#spring.datasource.username=postgres
+#spring.datasource.driver-class-name=org.postgresql.Driver
+#spring.datasource.password=root
+
+##
+# FIX: Changed from 'validate' to 'update' to auto-create missing tables
+#spring.jpa.hibernate.ddl-auto=update
+#spring.jpa.show-sql=true
+#
+spring.datasource.url=jdbc:postgresql://192.168.150.64:5432/member_validation
+spring.datasource.username=rpauser
+spring.datasource.password=Pf370VN1w5fg37
+spring.datasource.driver-class-name=org.postgresql.Driver
+#
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=false
+
+
+# windows Server configuration
+
+
+## =========================
+## RabbitMQ (Windows Server)
+## =========================
+#spring.rabbitmq.host=localhost
+#spring.rabbitmq.port=5672
+#spring.rabbitmq.username=guest
+#spring.rabbitmq.password=guest
+#
+## Queues (NO CHANGE)
+#rpa.queue.main=rpa_submission_main_q
+#rpa.queue.response=rpa_submission_response_q
+#rpa.queue.query=rpa_query_main_q
+#
+## =========================
+## PostgreSQL (Windows Server)
+## =========================
+#spring.datasource.url=jdbc:postgresql://localhost:5432/postgres
+#spring.datasource.username=postgres
+#spring.datasource.password=root
+#spring.datasource.driver-class-name=org.postgresql.Driver
+#
+## =========================
+## JPA / Hibernate
+## =========================
+## Table already created manually
+#spring.jpa.hibernate.ddl-auto=update
+#spring.jpa.show-sql=false
+
+
+#Testing claimbookPOC Server
+
+# =========================
+# RabbitMQ (Windows Server)
+# =========================
+#spring.rabbitmq.host=localhost
+#spring.rabbitmq.port=56722
+#spring.rabbitmq.username=guest
+#spring.rabbitmq.password=guest
+
+# Queues (NO CHANGE)
+# rpa.queue.main=automation_process_q
+# rpa.queue.response=automation_submission_response_q
+# rpa.queue.query=query_reply_automation_q
+
+# PostgreSQL (REMOTE PROD DB)
+#spring.datasource.url=jdbc:postgresql://172.16.1.12:5432/Rpa
+#spring.datasource.username=claimbook
+#spring.datasource.password=Claimbook
+#spring.datasource.driver-class-name=org.postgresql.Driver
+
+# JPA / Hibernate (PRODUCTION SAFE)
+# DO NOT let Hibernate touch schema in PROD - Only use validate after schema is created
+# spring.jpa.hibernate.ddl-auto=validate
+#
+# spring.jpa.show-sql=false
+# spring.jpa.properties.hibernate.format_sql=false
+
+## =========================
+## Connection Pool (Stable for RPA)
+## =========================
+#spring.datasource.hikari.maximum-pool-size=5
+#spring.datasource.hikari.minimum-idle=1
+#spring.datasource.hikari.idle-timeout=30000
+#spring.datasource.hikari.connection-timeout=30000
+
+# =========================
+# Timezone (Avoid PROD timestamp issues)
+# =========================
+spring.jpa.properties.hibernate.jdbc.time_zone=UTC
+
+logging.level.com.abi.Bahrain_Rpa.automation.nextcare.NextCareAutomation=DEBUG
+# Provider name shown in medicineDetailsVOList[].provider of the CB response
+#rpa.provider-name=KIMSHEALTH HOSPITAL (KIMS BAHRAIN HOSPITAL)
+
+
+# =========================
+# SERVER RabbitMQ  (active)
+# =========================
+# CONSUME broker - cases are read from here (rpa.queue.main / rpa.queue.query)
+spring.rabbitmq.host=192.168.150.99
+spring.rabbitmq.port=5672
+spring.rabbitmq.username=rpaadmin
+spring.rabbitmq.password=Rp@Cb@dm1n
+
+# RESPONSE broker - responses are sent here (rpa.queue.response)
+broker.host=192.168.150.97
+broker.port=5672
+broker.username=cbadmin1
+broker.password=CbRaJ1PDnve2026
+
+
+
+rpa.queue.main=automation_process_q
+rpa.queue.response=automation_submission_response_q
+rpa.queue.query=rpa_query_main_q
