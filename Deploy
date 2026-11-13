@@ -1,0 +1,1 @@
+java -jar bahrain-member-validation.jar --spring.datasource.url=jdbc:postgresql://localhost:5432/bahrain_member_validation
