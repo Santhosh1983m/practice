@@ -1,0 +1,12 @@
+UPDATE portal_session
+SET status = 'EXPIRED', updated_at = now()
+WHERE portal = 'HEALTH360'
+  AND status = 'ACTIVE'
+  AND NOT (tenant_id = '5' AND username = 'rbh cs');
+
+
+SELECT tenant_id, hospital_code, username, status, last_login_at
+FROM portal_session WHERE portal = 'HEALTH360' ORDER BY tenant_id;
+
+
+SELECT tenant_id, hospital_code, username, enabled FROM portal_credential WHERE portal = 'HEALTH360';
