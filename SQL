@@ -10,3 +10,10 @@ FROM portal_session WHERE portal = 'HEALTH360' ORDER BY tenant_id;
 
 
 SELECT tenant_id, hospital_code, username, enabled FROM portal_credential WHERE portal = 'HEALTH360';
+
+
+
+SELECT *
+FROM public.member_validation_log
+WHERE created_at >= NOW() - INTERVAL '3 days'
+ORDER BY id ASC;
